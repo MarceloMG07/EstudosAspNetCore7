@@ -20,8 +20,14 @@ app.UseRouting();
 
 app.UseAuthorization();
 
-app.MapControllerRoute(
-    name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+//app.MapControllerRoute("modulos","Financeiro/{controller=Home}/{action=Index}/{id?}");
+//app.MapControllerRoute("gestao", "{controller=Home}/{action=Index}/{id}/{categorias?}");
+
+app.MapControllerRoute("default","{controller=Home}/{action=Index}/{id?}");
+
+/* */
+//app.MapControllerRoute(
+//    name: "default",
+//    pattern: "{controller=Home}/{action=Index}/{id?}");
 
 app.Run();

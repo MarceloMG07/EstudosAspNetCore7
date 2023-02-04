@@ -1,4 +1,4 @@
-namespace MyStock.Models
+namespace DemoRotas.Models
 {
     public class ErrorViewModel
     {
