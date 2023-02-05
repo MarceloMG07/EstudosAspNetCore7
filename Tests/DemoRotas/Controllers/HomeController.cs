@@ -70,7 +70,10 @@ namespace DemoRotas.Controllers
             //TODO: Verifica se a model esta valida
             if (ModelState.IsValid)
             {
-
+                foreach (var error in ModelState.Values.SelectMany(m => m.Errors))
+                {
+                    Console.WriteLine(error.ErrorMessage);
+                }
             }
             return View();
         }
