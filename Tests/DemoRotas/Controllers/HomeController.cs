@@ -20,7 +20,18 @@ namespace DemoRotas.Controllers
         public IActionResult Index()
         {
             //TODO: Quando o nome da view é o mesmo do metodo não precisa expecificar o nome (Convenção ASP.NET)
-            return View();
+            // return View();
+
+            var filme = new Filme
+            {
+                Titulo = "oi",
+                DataLancamento = DateTime.Now,
+                Genero = null,
+                Avaliacao = 10,
+                Valor = 2000
+            };
+
+            return RedirectToAction("Privacy", filme);
         }
 
         //[Route("ComParametros/{id}")]
@@ -54,8 +65,13 @@ namespace DemoRotas.Controllers
         }
 
         [Route("Privacidade")]
-        public IActionResult Privacy()
+        public IActionResult Privacy(Filme filme)
         {
+            //TODO: Verifica se a model esta valida
+            if (ModelState.IsValid)
+            {
+
+            }
             return View();
         }
 
